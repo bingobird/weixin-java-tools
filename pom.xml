@@ -3,12 +3,12 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
     xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>me.chanjar</groupId>
+  <groupId>com.dfire</groupId>
   <artifactId>weixin-java-parent</artifactId>
   <version>1.3.3</version>
   <packaging>pom</packaging>
   <name>WeiXin Java Tools - Parent</name>
-  <description>微信公众号、企业号上级POM</description>
+  <description>微信公众号、企业号上级POM，修复了部分HttpClient连接释放问题，5秒的连接及接收数据超时</description>
   <url>https://github.com/chanjarster/weixin-java-tools</url>
 
   <licenses>

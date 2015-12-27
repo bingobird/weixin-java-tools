@@ -23,6 +23,8 @@ import org.apache.http.util.EntityUtils;
 /**
  * 简单的POST请求执行器，请求的参数是String, 返回的结果也是String
  * @author Daniel Qian
+ * 修复了部分HttpClient连接释放问题，5秒的连接及接收数据超时
+ * 2015-12-27 @bingobird
  *
  */
 public class SimplePostRequestExecutor implements RequestExecutor<String, String> {
@@ -30,8 +32,13 @@ public class SimplePostRequestExecutor implements RequestExecutor<String, String
   @Override
   public String execute(CloseableHttpClient httpclient, HttpHost httpProxy, String uri, String postEntity) throws WxErrorException, ClientProtocolException, IOException {
     HttpPost httpPost = new HttpPost(uri);
+
+    //modify by bingobird,修复HttpClient连接释放问题，5秒的连接及接收数据超时
     if (httpProxy != null) {
-      RequestConfig config = RequestConfig.custom().setProxy(httpProxy).build();
+      RequestConfig config = RequestConfig.custom().setProxy(httpProxy).setSocketTimeout(5000).setConnectTimeout(5000).build();
+      httpPost.setConfig(config);
+    } else {
+      RequestConfig config = RequestConfig.custom().setSocketTimeout(5000).setConnectTimeout(5000).build();
       httpPost.setConfig(config);
     }
 

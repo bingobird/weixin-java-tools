@@ -9,7 +9,7 @@
     <version>1.3.3</version>
   </parent>
 
-  <artifactId>weixin-java-common</artifactId>
+  <artifactId>weixin-java-common-fixed</artifactId>
   <name>WeiXin Java Tools - Common</name>
   <description>微信公众号、企业号Java SDK Common</description>
 

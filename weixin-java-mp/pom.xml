@@ -8,14 +8,14 @@
         <artifactId>weixin-java-parent</artifactId>
         <version>1.3.3</version>
     </parent>
-    <artifactId>weixin-java-mp</artifactId>
+    <artifactId>weixin-java-mp-fixed</artifactId>
     <name>WeiXin Java Tools - MP</name>
-    <description>微信公众号Java SDK</description>
+    <description>微信公众号Java SDK，修复了部分HttpClient连接释放问题，5秒的连接及接收数据超时</description>
 
     <dependencies>
         <dependency>
             <groupId>me.chanjar</groupId>
-            <artifactId>weixin-java-common</artifactId>
+            <artifactId>weixin-java-common-fixed</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

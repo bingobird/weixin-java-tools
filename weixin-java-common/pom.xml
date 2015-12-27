@@ -11,7 +11,7 @@
 
   <artifactId>weixin-java-common-fixed</artifactId>
   <name>WeiXin Java Tools - Common</name>
-  <description>微信公众号、企业号Java SDK Common</description>
+  <description>微信公众号、企业号Java SDK Common，修复了部分HttpClient连接释放问题，5秒的连接及接收数据超时</description>
 
   <dependencies>
     <dependency>
